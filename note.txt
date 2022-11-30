@@ -1,0 +1,12 @@
+$ = php variables Type
+echo = show output in web
+case = sensistive
+
+Form => 1. action = where they go (example.php)
+        2. method = GET / POST
+
+Super Global Variables of PHP
+        -POST
+        -GET
+        -REQUEST
+        -FILES
