@@ -1,3 +1,5 @@
+This is dev branch
+
 $ = php variables Type
 echo = show output in web
 case = sensistive
@@ -6,7 +8,11 @@ Form => 1. action = where they go (example.php)
         2. method = GET / POST
 
 Super Global Variables of PHP
-        -POST
-        -GET
-        -REQUEST
-        -FILES
+        -$_POST
+        -$_GET
+        -$_REQUEST
+        -$_FILES
+        -$_SESSION
+        -$_ENV
+        -$_COOKIES
+
