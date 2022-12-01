@@ -1,0 +1,28 @@
+show databaseName;
+use databaseName;
+
+C R U D
+ C => create (database,table,vies,..)insert (data into table)
+        SQL
+            INSERT INTO table (column1, column2,..)
+            VALUES (value1,value2,..)
+ R => Retrieve (data from table)
+        SQL
+           select * from table_name;
+ U => Update(tables)
+ D => Delete (database,table), Drop(database)
+
+Database Server Connection
+
+    INSERT DATA
+    1 => Connect database server (create cennection obj)
+    2 => write query
+    3 => prepare query
+    4 => execute query
+
+    RETRIEVE DATA
+    1 => Connect database server (create cennection obj)
+    2 => write query
+    3 => prepare query
+    4 => execute query
+    5 => retrieve result set

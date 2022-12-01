@@ -1,4 +1,6 @@
 <?php
+        //Connect database server (create cennection obj)
+        include_once ("dbConfig.php");
 
     if ($_POST['userInfo']) {
         $nickname = $_POST ['nickname'];
@@ -7,12 +9,28 @@
         $address = $_POST ['address'];
         $color = $_POST ['color'];
         $dateOfBirdth = $_POST ['dob'];
-        echo "Your Name is " .$nickname ."<br>"."<br>";
-        echo "Your Password is " .$password ."<br>"."<br>";
-        echo "Your Phone Number is " .$phone ."<br>"."<br>";
-        echo "Your Address is " .$address ."<br>"."<br>";
-        echo "Your Color is " .$color ."<br>"."<br>";
-        echo "Your Date of Birdth is " .$dateOfBirdth ."<br>"."<br>";
+
+        //write query
+        $query = "INSERT INTO user (nickname,password,phone,address,color,dob) 
+                    VALUES(:nickname,:password,:phone,:address,:color,:dob)";
+
+        //prepare query
+        $prepare = $conn -> prepare($query);
+
+        $prepare -> bindParam(':nickname',$nickname);
+        $prepare -> bindParam(':password',$password);
+        $prepare -> bindParam(':phone',$phone);
+        $prepare -> bindParam(':address',$address);
+        $prepare -> bindParam(':color',$color);
+        $prepare -> bindParam(':dob',$dateOfBirdth);
+
+        //execute query
+        if($prepare -> execute()){
+            echo "Your Input data Inserted Successfully!";
+        }else {
+            echo "Inserted failed";
+        }
+
     }else {
         echo "You don't clicked Sumbit Buttton";
     } 
